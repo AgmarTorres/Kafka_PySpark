@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lista de Clientes</title>
+</head>
+<body>
+    <h1> Lista de Clientes</h1>
+    <hr/>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>Nome</td>
+            <td>Telefone</td>
+            <td>CPF</td>
+            <td>E-mail</td>
+            <td>Alterar</td>
+            <td>Excluir</td>
+        </tr>
+        {% for pessoa in pessoas %}
+        <tr>
+            <td>{{pessoa.id}}</td>
+            <td>{{pessoa.nome}}</td>
+            <td>{{pessoa.telefone}}</td>
+            <td>{{pessoa.cpf}}</td>
+            <td>{{pessoa.email}}</td>
+            <td><a href="/atualizar/{{pessoa._id}}">Atualizar</a></td>
+            <td><a href="/excluir/{{pessoa._id}}">Excluir</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+</body>
+</html>
